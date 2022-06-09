@@ -52,7 +52,8 @@ export default {
   },
   computed: {
     ...mapState([
-      'usuario'
+      'usuario',
+      'token'
     ])
   },
   methods: {

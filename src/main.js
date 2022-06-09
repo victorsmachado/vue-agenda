@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://8080-victorsmach-agendaescol-i2t14pw292f.ws-us46.gitpod.io/spring-app'
+axios.defaults.baseURL = 'https://8080-victorsmach-agendaescol-c0umiit4xwc.ws-us47.gitpod.io/spring-app'
 
 axios.interceptors.request.use(config => {
   if(store.state.token) {

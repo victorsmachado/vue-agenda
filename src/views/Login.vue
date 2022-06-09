@@ -22,13 +22,15 @@ export default {
   data() {
     return {
       nome: '',
-      senha: ''
+      senha: '',
+      autorizacao:''
     }
   },
   methods: {
     ...mapMutations([
       'setUsuario',
-      'setToken'
+      'setToken',
+      'setAutorizacao'
     ]),
     login() {
       axios.post('login',
@@ -40,6 +42,7 @@ export default {
           console.log(res)
           this.setUsuario(res.data)
           this.setToken(res.headers.token)
+          this.setAutorizacao(res.data)
           this.$router.push('/')
         })
         .catch(error => console.log(error))

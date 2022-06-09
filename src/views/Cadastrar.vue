@@ -16,6 +16,7 @@
 
 <script>
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   name: 'usuario',
@@ -24,6 +25,12 @@ export default {
       nome: '',
       senha: '',
     }
+  },
+  computed: {
+    ...mapState([
+      'usuario',
+      'token'
+    ])
   },
   methods: {
     cadastrar() {
