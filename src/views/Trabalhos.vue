@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit.prevent="cadastrar">
-      <h2 class="text-center">Trabalhos</h2>
+      <h2 class="text-center titulo">Trabalhos</h2>
       <div v-if="usuario" class="form-group">
         <label for="titulo">Titulo</label>
         <input type="text" id="titulo"
@@ -86,3 +86,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.titulo{
+  margin-top: 5%;
+}
+
+</style>

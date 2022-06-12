@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersist from 'vuex-persist'
+import router from './router'
 
 Vue.use(Vuex)
 
@@ -16,22 +17,21 @@ export default new Vuex.Store({
   state: {
     usuario: null,
     token: null,
-    autorizacao:null
+
   },
   mutations: {
     setUsuario (state, usuario) {
       state.usuario = usuario
+      console.log(usuario);
     },
     setToken (state, token)  {
       state.token = token
-    },
-
-    setAutorizacao (state, autorizacao)  {
-      state.autorizacao = autorizacao
+      console.log(token);
     },
     logout (state) {
       state.token = null
       state.usuario = null
+      router.push('/login')
     }
   },
   actions: {

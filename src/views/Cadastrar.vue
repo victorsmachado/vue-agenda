@@ -1,22 +1,35 @@
 <template>
   <form @submit.prevent="cadastrar">
-    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-    <p class="text-center">Cadastro de alunos, defina um usuário e uma senha, você precisa ser um administrador para fazer esse cadastro</p>
-    <div class="form-group">
-      <label for="nome">nome</label>
-      <input type="text" id="nome" class="form-control" required autofocus v-model="nome">
-    </div>
-    <div class="form-group">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" class="form-control" required v-model="senha">
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+    <div class="text-center" style="padding:50px 0">
+	<div class="logo">Registrar</div>
+	<!-- Main Form -->
+	<div class="login-form-1">
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">
+						<label for="reg_username" class="sr-only">Email address</label>
+						<input type="text" class="form-control" id="nome" name="username" placeholder="username" required autofocus v-model="nome">
+					</div>
+					<div class="form-group">
+						<label for="reg_password" class="sr-only">Password</label>
+						<input type="password" class="form-control" id="senha" name="password" placeholder="password" required v-model="senha">
+					</div>
+					
+					
+				</div>
+				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+			</div>
+
+	</div>
+</div>
   </form>
 </template>
 
 <script>
 import axios from 'axios'
 import { mapState } from 'vuex'
+
 
 export default {
   name: 'usuario',
@@ -29,7 +42,6 @@ export default {
   computed: {
     ...mapState([
       'usuario',
-      'token'
     ])
   },
   methods: {
