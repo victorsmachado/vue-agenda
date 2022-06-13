@@ -4,7 +4,7 @@ import router from './router'
 import store from '../src/store'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://8080-victorsmach-agendaescol-wwiad6kbz1k.ws-us47.gitpod.io/spring-app'
+axios.defaults.baseURL = 'https://8080-victorsmach-agendaescol-49ih5niza5b.ws-us47.gitpod.io/spring-app'
 
 
 

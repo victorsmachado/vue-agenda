@@ -41,7 +41,8 @@ export default {
   methods: {
     ...mapMutations([
       'setUsuario',
-      'setToken'
+      'setToken',
+      'setAutorizacao'
     ]),
     login() {
       axios.post('login',
@@ -53,11 +54,23 @@ export default {
           console.log(res)
           this.setUsuario(res.data)
           this.setToken(res.data.token)
+          this.GetAuth()
+          setTimeout(() => {
+            
           this.$router.push('/')
+          }, 500);
           console.log(store.state.token);
         })
         .catch(error => console.log(error))
     },
+
+    GetAuth(){
+      axios.get('/usuario/nome?nome='+this.nome).then(snp=>{
+        console.log(snp);
+        console.log("chegou");
+        this.setAutorizacao(snp.data.autorizacoes[0].nome)
+      })
+    }
   }
 }
 </script>

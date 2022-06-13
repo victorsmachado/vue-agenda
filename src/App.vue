@@ -5,7 +5,7 @@
       <router-link to="/trabalhos" class="navbar-toggler text-secondary">Trabalhos</router-link> 
       <a v-if="usuario" @click="logout" class="navbar-toggler text-secondary">Logout</a> 
       <router-link v-if="!usuario" to="/login" class="navbar-toggler text-secondary">Login</router-link> 
-      <router-link v-if="usuario" to="/cadastro" class="navbar-toggler text-secondary">Cadastrar</router-link>
+      <router-link v-if="usuario && autorizacao=='ROLE_ADMIN'" to="/cadastro" class="navbar-toggler text-secondary">Cadastrar</router-link>
     </nav>
     <router-view/>
   </div>
@@ -18,7 +18,8 @@ export default {
   name: 'app',
   computed: {
     ...mapState([
-      'usuario'
+      'usuario',
+      'autorizacao'
     ])
   },
   methods: {

@@ -17,6 +17,7 @@ export default new Vuex.Store({
   state: {
     usuario: null,
     token: null,
+    autorizacao: null,
 
   },
   mutations: {
@@ -28,9 +29,16 @@ export default new Vuex.Store({
       state.token = token
       console.log(token);
     },
+
+    setAutorizacao (state, autorizacao)  {
+      state.autorizacao = autorizacao
+      console.log(autorizacao);
+    },
+
     logout (state) {
       state.token = null
       state.usuario = null
+      state.autorizacao= null
       router.push('/login')
     }
   },
